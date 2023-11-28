@@ -163,40 +163,40 @@
                                         
                                     </style>
 
-                                    <script>
+                                     <script>
 (function () {
-  const seconds = 1000,
-        minutes = second * 60,
-        hours = minute * 60,
-        days = hour * 24;
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
   //I'm adding this section so I don't have to keep updating this pen every year :-)
   //remove this if you don't need it
-  let todays = new Date(),
-      dds = String(todays.getDate()).padStart(2, "0"),
-      mms = String(todays.getMonth() + 1).padStart(2, "0"),
-      yyyys = todays.getFullYear(),
-      nextYears = yyyys + 1,
-      dayMonths = "12/03/",
-      birthdays = dayMonths + yyyys;
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "12/03/",
+      birthday = dayMonth + yyyy;
   
-  todays = mms + "/" + dds + "/" + yyyys;
-  if (todays > birthdays) {
-    birthdays = dayMonths + nextYears;
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
   }
   //end
   
-  const countDowns = new Date(birthdays).getTime(),
+  const countDown = new Date(birthday).getTime(),
       x = setInterval(function() {    
 
-        const nows = new Date().getTime(),
-              distances = countDowns - nows;
+        const now = new Date().getTime(),
+              distance = countDown - now;
 
-        document.getElementById("dayss").innerText = Math.floor(distances / (days)),
-          document.getElementById("hourss").innerText = Math.floor((distances % (days)) / (hour)),
-          document.getElementById("minutess").innerText = Math.floor((distances % (hours)) / (minute)),
-          document.getElementById("secondss").innerText = Math.floor((distances % (minutes)) / second);
-
+        document.getElementById("dayss").innerText = Math.floor(distance / (day)),
+          document.getElementById("hourss").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutess").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("secondss").innerText = Math.floor((distance % (minute)) / second);
+        
       }, 0)
   }());
                                     </script>
