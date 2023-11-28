@@ -89,6 +89,10 @@
     <div class="container-fluid p-0 mb-5 pb-5" id="home">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
+
+
+
+                
                 <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
                     <img class="position-absolute w-100 h-100" src="img/carousel-1.jpg" style="object-fit: cover;">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -107,99 +111,7 @@
                                 <div id="clock">
   
                                      
-  <div id="countdowns" style="text-align: center;">
-    <ul class="myClass">
-      <li><span id="dayss"></span>days</li>
-      <li><span id="hourss"></span>Hours</li>
-      <li><span id="minutess"></span>Minutes</li>
-      <li><span id="secondss"></span>Seconds</li>
-    </ul>
-  </div>
-  <div id="contents" class="emoji">
-    <span>🥳</span>
-    <span>🎉</span>
-    <span>🎂</span>
-  </div>
-
-                                    <style>
-.myClass li {
-                                         display: inline-block;
-  font-size: 1.5em;
-  list-style-type: none;
-  padding: 1em;
-  text-transform: uppercase;
-}
-
-
-.myClass li span {
-  display: block;
-  font-size: 4.5rem;
-}
-
-.emoji {
-  display: none;
-  padding: 1rem;
-}
-
-.emoji span {
-  font-size: 4rem;
-  padding: 0 .5rem;
-}
-
-@media all and (max-width: 768px) {
-
   
-.myClass li {
-    font-size: calc(1.125rem * .75);
-  }
-  
-  .myClass li span {
-    font-size: calc(3.375rem * .75);
-  }
-}
-
-                                        
-                                        
-                                        
-                                    </style>
-
-                                     <script>
-(function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "12/03/",
-      birthday = dayMonth + yyyy;
-  
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
-
-        const now = new Date().getTime(),
-              distance = countDown - now;
-
-        document.getElementById("dayss").innerText = Math.floor(distance / (day)),
-          document.getElementById("hourss").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutess").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("secondss").innerText = Math.floor((distance % (minute)) / second);
-        
-      }, 0)
-  }());
-                                    </script>
                                     
                                     
                                 </div>
@@ -227,7 +139,18 @@
                                 <div id="clock">
   
                                      
-  <div id="countdown" style="text-align: center;">
+  
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+<div id="countdown" style="text-align: center;">
     <ul class="myClass">
       <li><span id="days"></span>days</li>
       <li><span id="hours"></span>Hours</li>
@@ -320,13 +243,8 @@
       }, 0)
   }());
                                     </script>
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                
             </div>
             <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
                 <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
