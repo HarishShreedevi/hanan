@@ -107,15 +107,15 @@
                                 <div id="clock">
   
                                      
-  <div id="countdown" style="text-align: center;">
+  <div id="countdowns" style="text-align: center;">
     <ul class="myClass">
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
+      <li><span id="dayss"></span>days</li>
+      <li><span id="hourss"></span>Hours</li>
+      <li><span id="minutess"></span>Minutes</li>
+      <li><span id="secondss"></span>Seconds</li>
     </ul>
   </div>
-  <div id="content" class="emoji">
+  <div id="contents" class="emoji">
     <span>🥳</span>
     <span>🎉</span>
     <span>🎂</span>
@@ -165,46 +165,38 @@
 
                                     <script>
 (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+  const seconds = 1000,
+        minutes = second * 60,
+        hours = minute * 60,
+        days = hour * 24;
 
   //I'm adding this section so I don't have to keep updating this pen every year :-)
   //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "12/03/",
-      birthday = dayMonth + yyyy;
+  let todays = new Date(),
+      dds = String(todays.getDate()).padStart(2, "0"),
+      mms = String(todays.getMonth() + 1).padStart(2, "0"),
+      yyyys = todays.getFullYear(),
+      nextYears = yyyys + 1,
+      dayMonths = "12/03/",
+      birthdays = dayMonths + yyyys;
   
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
+  todays = mms + "/" + dds + "/" + yyyys;
+  if (todays > birthdays) {
+    birthdays = dayMonths + nextYears;
   }
   //end
   
-  const countDown = new Date(birthday).getTime(),
+  const countDowns = new Date(birthdays).getTime(),
       x = setInterval(function() {    
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+        const nows = new Date().getTime(),
+              distances = countDowns - nows;
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+        document.getElementById("dayss").innerText = Math.floor(distances / (days)),
+          document.getElementById("hourss").innerText = Math.floor((distances % (days)) / (hour)),
+          document.getElementById("minutess").innerText = Math.floor((distances % (hours)) / (minute)),
+          document.getElementById("secondss").innerText = Math.floor((distances % (minutes)) / second);
 
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's Our Reception Day!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
       }, 0)
   }());
                                     </script>
@@ -324,15 +316,7 @@
           document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
           document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
           document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's Our Reception Day!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
+        
       }, 0)
   }());
                                     </script>
